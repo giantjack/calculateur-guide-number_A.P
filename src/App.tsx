@@ -16,7 +16,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 
-// Base de données des flashs courants avec leur Guide Number (à ISO 100, zoom 35mm)
+// Base de données des flashs courants avec leur Nombre Guide (à ISO 100, zoom 35mm)
 const FLASHES: Record<string, { gn: number; brand: string; type: string }> = {
   // Canon Speedlites
   "Canon 600EX II-RT": { gn: 60, brand: "Canon", type: "Cobra" },
@@ -100,7 +100,7 @@ function App() {
             fontWeight="bold"
             color="#212E40"
           >
-            Calculateur Guide Number Flash
+            Calculateur Nombre Guide Flash
           </Text>
           <Text fontSize="sm" color="gray.500">
             À quelle distance maximale votre flash peut-il éclairer ?
@@ -124,7 +124,7 @@ function App() {
               .sort((a, b) => a[0].localeCompare(b[0]))
               .map(([name, data]) => (
                 <option key={name} value={name}>
-                  {name} (GN {data.gn})
+                  {name} (NG {data.gn})
                 </option>
               ))}
           </Select>
@@ -142,10 +142,10 @@ function App() {
         <Box>
           <Flex justify="space-between" align="center" mb={2}>
             <Text fontWeight="medium" fontSize="sm">
-              Entrer le Guide Number manuellement
+              Entrer le nombre guide manuellement
             </Text>
             <Badge colorScheme="orange" fontSize="md" px={2}>
-              GN {guideNumber}
+              NG {guideNumber}
             </Badge>
           </Flex>
           <Box px={2} pb={6}>
@@ -263,7 +263,7 @@ function App() {
               {maxDistance} m
             </Text>
             <Text fontSize="sm" color="gray.500">
-              GN effectif à ISO {iso} : {effectiveGN}
+              NG effectif à ISO {iso} : {effectiveGN}
             </Text>
           </VStack>
         </Box>
@@ -370,17 +370,17 @@ function App() {
         {/* Info pédagogique */}
         <Box bg="gray.50" p={4} borderRadius="md" fontSize="sm" color="gray.600">
           <Text fontWeight="medium" mb={2}>
-            Comprendre le Guide Number
+            Comprendre le nombre guide
           </Text>
           <Text mb={2}>
-            Le <strong>Guide Number (GN)</strong> indique la puissance d'un flash.
+            Le <strong>nombre guide (NG)</strong> indique la puissance d'un flash.
             Plus il est élevé, plus le flash est puissant.
           </Text>
           <Text mb={2}>
-            <strong>Formule :</strong> Distance max = GN × √(ISO÷100) ÷ ouverture
+            <strong>Formule :</strong> Distance max = NG × √(ISO÷100) ÷ ouverture
           </Text>
           <Text>
-            <strong>Astuces :</strong> Doubler l'ISO équivaut à augmenter le GN de
+            <strong>Astuces :</strong> Doubler l'ISO équivaut à augmenter le NG de
             40%. Ouvrir d'un stop (ex: f/8 → f/5.6) double presque la distance.
           </Text>
         </Box>
