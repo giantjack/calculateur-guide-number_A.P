@@ -93,20 +93,6 @@ function App() {
   return (
     <Box maxW="900px" mx="auto" p={{ base: 3, md: 6 }}>
       <VStack spacing={{ base: 4, md: 6 }} align="stretch">
-        {/* Titre */}
-        <Box textAlign="center" pb={2}>
-          <Text
-            fontSize={{ base: "xl", md: "2xl" }}
-            fontWeight="bold"
-            color="#212E40"
-          >
-            Calculateur Nombre Guide Flash
-          </Text>
-          <Text fontSize="sm" color="gray.500">
-            À quelle distance maximale votre flash peut-il éclairer ?
-          </Text>
-        </Box>
-
         {/* Sélection flash */}
         <Box>
           <Text fontWeight="medium" fontSize="sm" mb={2}>
